@@ -1,0 +1,92 @@
+<%= form_with(model: advertisement, local: true) do |form| %>
+  <% if advertisement.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(advertisement.errors.count, "error") %> prohibited this advertisement from being saved:</h2>
+
+      <ul>
+        <% advertisement.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :start_datetime %>
+    <%= form.datetime_select :start_datetime %>
+  </div>
+
+  <div class="field">
+    <%= form.label :end_datetime %>
+    <%= form.datetime_select :end_datetime %>
+  </div>
+
+  <div class="field">
+    <%= form.label :tempo_exibicao %>
+    <%= form.time_select :tempo_exibicao %>
+  </div>
+
+  <div class="field">
+    <%= form.label :image_url %>
+    <%= form.text_field :image_url %>
+  </div>
+
+  <div class="field">
+    <%= form.label :advertisement_id %>
+    <%= form.number_field :advertisement_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :advertisement_name %>
+    <%= form.text_field :advertisement_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :campaign_id %>
+    <%= form.number_field :campaign_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :campaign_name %>
+    <%= form.text_field :campaign_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :campaign_customers_name %>
+    <%= form.text_field :campaign_customers_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :screen_id %>
+    <%= form.number_field :screen_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :template_id %>
+    <%= form.number_field :template_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :grid_id %>
+    <%= form.number_field :grid_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :template_id %>
+    <%= form.number_field :template_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :position %>
+    <%= form.text_field :position %>
+  </div>
+
+  <div class="field">
+    <%= form.label :widget_size %>
+    <%= form.text_field :widget_size %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
